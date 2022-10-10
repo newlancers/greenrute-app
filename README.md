@@ -1,4 +1,4 @@
-# green_rute
+# GreenRute
 
 Твій шкільний помічник.
 

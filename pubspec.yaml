@@ -59,7 +59,7 @@ flutter_icons:
   android: true
   ios: true
   remove_alpha_ios: true
-  adaptive_icon_bachground: '#16a34a'
+  adaptive_icon_background: '#16a34a'
   adaptive_icon_foreground: 'icon/icon.png'
 
 # The following section is specific to Flutter packages.
