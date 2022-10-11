@@ -37,6 +37,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   english_words: ^4.0.0
+  cupertino_list_tile: ^0.2.1
 
 dev_dependencies:
   flutter_test:
@@ -60,7 +61,7 @@ flutter_icons:
   ios: true
   remove_alpha_ios: true
   adaptive_icon_background: '#16a34a'
-  adaptive_icon_foreground: 'icon/icon.png'
+  adaptive_icon_foreground: 'icon/icon-android.png'
 
 # The following section is specific to Flutter packages.
 flutter:

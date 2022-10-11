@@ -1,4 +1,6 @@
+import 'package:english_words/english_words.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:cupertino_list_tile/cupertino_list_tile.dart';
 
 void main() {
   runApp(const MyApp());
@@ -6,6 +8,8 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
+
+  static const colorGreen = Color(0xff16a34a);
 
   @override
   Widget build(BuildContext context) {
@@ -19,15 +23,46 @@ class MyApp extends StatelessWidget {
               color: CupertinoColors.white,
             ),
           ),
-          backgroundColor: Color(0xff16a34a),
+          backgroundColor: colorGreen,
           brightness: Brightness.dark,
         ),
         child: SafeArea(
           child: Center(
-            child: Text('Hello World'),
+            child: RandomWords(),
           ),
         ),
       ),
     );
   }
+}
+
+class _RandomWordsState extends State<RandomWords> {
+  final _suggestions = <WordPair>[];
+  final _biggerFont = const TextStyle(fontSize: 18);
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      padding: const EdgeInsets.all(16.0),
+      itemBuilder: (context, i) {
+        if (i >= _suggestions.length) {
+          _suggestions.addAll(generateWordPairs().take(10));
+        }
+        return CupertinoListTile(
+          title: Text(
+            _suggestions[i].asPascalCase,
+            style: _biggerFont,
+          ),
+          trailing: const Text(''),
+        );
+      },
+    );
+  }
+}
+
+class RandomWords extends StatefulWidget {
+  const RandomWords({super.key});
+
+  @override
+  State<RandomWords> createState() => _RandomWordsState();
 }
