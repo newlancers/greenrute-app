@@ -60,6 +60,7 @@ android {
             signingConfig signingConfigs.debug
         }
     }
+    namespace 'com.newlancers.green_rute'
 }
 
 flutter {
