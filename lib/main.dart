@@ -1,6 +1,7 @@
 import 'package:english_words/english_words.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:cupertino_list_tile/cupertino_list_tile.dart';
+import 'package:flutter/services.dart';
 
 void main() {
   runApp(const MyApp());
@@ -9,10 +10,12 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  static const colorGreen = Color(0xff16a34a);
+  static const colorGreen = Color(0xFF16A34A);
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
+
     return const CupertinoApp(
       title: 'GreenRute',
       home: CupertinoPageScaffold(
